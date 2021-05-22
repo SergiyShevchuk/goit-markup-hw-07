@@ -1,0 +1,31 @@
+.logo-icon-list {
+  display: inline-flex;
+}
+.logo-icon-item:not(:last-child) {
+  margin-right: 30px;
+}
+.logo-icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--color-icon);
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: border var(--animation);
+}
+.logo-icon-link:hover,
+.logo-icon-link:focus {
+  border-color: var(--color-highlight);
+}
+
+.icon-logo {
+  fill: var(--color-icon);
+  transition: fill var(--animation);
+}
+
+.logo-icon-link:hover .icon-logo,
+.logo-icon-link:focus .icon-logo {
+  fill: var(--color-highlight);
+}
