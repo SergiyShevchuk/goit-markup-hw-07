@@ -1,3 +1,13 @@
+.portfolio-filter-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.portfolio-button:not(:last-child) {
+  margin-right: 8px;
+}
+
 .filter-button {
   padding: 6px 22px;
   background: var(--color-background-light);

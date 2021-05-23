@@ -74,6 +74,11 @@ ul {
   letter-spacing: 0.03em;
 }
 
+.link {
+  text-decoration: none;
+  transition: color var(--animation);
+}
+
 .button-importent {
   position: relative;
   min-width: 200px;
@@ -292,6 +297,16 @@ img {
   fill: var(--color-background-light);
 }
 
+.portfolio-filter-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.portfolio-button:not(:last-child) {
+  margin-right: 8px;
+}
+
 .filter-button {
   padding: 6px 22px;
   background: var(--color-background-light);
@@ -312,10 +327,6 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.section-portfolio {
-  padding-bottom: 64px;
-}
-
 .portfolio-card {
   margin-bottom: 30px;
 }
@@ -324,56 +335,27 @@ img {
   margin-right: 30px;
 }
 
-.portfolio-link:hover,
-.portfolio-link:focus {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: box-shadow var(--animation);
-}
-
-.portfolio-link {
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow var(--animation);
-}
-
-.portfolio-link:hover .portfolio-exposition,
-.portfolio-link:focus .portfolio-exposition {
-  transform: translateY(0);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.portfolio-filter-list {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
-}
-
-.portfolio-button:not(:last-child) {
-  margin-right: 8px;
-}
-
-.portfolio-box {
+.portfolio-card__box {
   padding: 20px 24px 20px 24px;
   border: 1px solid var(--color-border);
   border-top: 0;
 }
 
-.portfolio-card-title {
+.portfolio-card__title {
   margin-bottom: 4px;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
 
-.portfolio-ledge {
+.portfolio-card__ledge {
   position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-.portfolio-exposition {
+.portfolio-card__exposition {
   position: absolute;
   display: flex;
   align-items: center;
@@ -391,15 +373,28 @@ img {
   transition: transform var(--animation);
 }
 
-.portfolio-card-category {
+.portfolio-card__category {
   line-height: 1.875;
   color: var(--color-text-light);
   letter-spacing: 0.03em;
 }
 
-.portfolio-card-list {
+.portfolio-card__link {
+  color: inherit;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  transition: box-shadow var(--animation);
+}
+
+.portfolio-card__link:hover, .portfolio-card__link:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow var(--animation);
+}
+
+.portfolio-card__link:hover .portfolio-card__exposition,
+.portfolio-card__link:focus .portfolio-card__exposition {
+  transform: translateY(0);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .logo-icon-list {
@@ -653,25 +648,6 @@ img {
   border-bottom: 1px solid var(--color-border);
 }
 
-.contact-icon {
-  display: inline-flex;
-  margin-right: 10px;
-  fill: currentColor;
-}
-
-.link {
-  text-decoration: none;
-  transition: color var(--animation);
-}
-
-.header-contacs {
-  margin-left: auto;
-}
-
-.header-style {
-  display: flex;
-}
-
 .header .logo {
   margin-right: 93px;
 }
@@ -689,7 +665,7 @@ img {
   color: var(--color-highlight);
 }
 
-.header-link {
+.nav__link {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.1428;
@@ -700,18 +676,12 @@ img {
   align-items: center;
 }
 
-.contac-link {
-  color: var(--color-text-light);
-}
-
-.header-link.active,
-.header-link:hover,
-.header-link:focus {
+.nav__link--active, .nav__link:hover, .nav__link:focus {
   position: relative;
   color: var(--color-highlight);
 }
 
-.header-link.active::after {
+.nav__link--active::after {
   position: absolute;
   content: "";
   display: block;
@@ -722,8 +692,22 @@ img {
   bottom: -1px;
 }
 
-.header-list-item:not(:last-child) {
+.nav__link--contacs {
+  color: var(--color-text-light);
+}
+
+.nav__item:not(:last-child) {
   margin-right: 50px;
+}
+
+.nav__icon {
+  display: inline-flex;
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.nav__contacs {
+  margin-left: auto;
 }
 
 .section-dark {
@@ -755,6 +739,10 @@ img {
 
 .section-team {
   background: var(--color-background-light);
+}
+
+.section-portfolio {
+  padding-bottom: 64px;
 }
 
 .portfolio-card-list {
